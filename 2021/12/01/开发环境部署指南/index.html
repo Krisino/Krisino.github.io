@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Krisino">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 配置 jdk 输入命令安装jdk  yum -y list java*yum -y install java-1.8.0-openjdk.x86_64等待安装jdk安装完成后，输入java -version若显示jdk版本，则说明安装成功。  安装javac  yum -y install java-1.8.0-openjdk-devel等待安装javac安装完成后，输入javac -ver">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发环境部署">
+<meta property="og:url" content="http://example.com/2021/12/01/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Krisino">
+<meta property="og:description" content="1. 配置 jdk 输入命令安装jdk  yum -y list java*yum -y install java-1.8.0-openjdk.x86_64等待安装jdk安装完成后，输入java -version若显示jdk版本，则说明安装成功。  安装javac  yum -y install java-1.8.0-openjdk-devel等待安装javac安装完成后，输入javac -ver">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/22359585/1631928283608-be1d4ec1-1391-4c43-a86e-843170a03869.png#clientId=ubdc7ea5a-8e4f-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=607&id=u92f51938&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1214&originWidth=2104&originalType=binary&ratio=1&rotation=0&showTitle=false&size=345132&status=done&style=none&taskId=u07bf00c5-c50a-47f0-bea1-8a081184dd4&title=&width=1052">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/22359585/1631934214316-3be8d660-51f6-485e-a664-4df548f5c869.jpeg#clientId=uc72f1c82-10d5-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=dxY8z&margin=%5Bobject%20Object%5D&name=8A03C743-ACE6-4D68-9016-0BAABC3D7BDE.jpeg&originHeight=1530&originWidth=2224&originalType=binary&ratio=1&rotation=0&showTitle=false&size=180706&status=done&style=none&taskId=ue56a514d-4d9f-4706-94de-1f0a4fb731e&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/22359585/1631934258507-d89c3a29-3a74-4f01-9c1d-a73842c0e308.jpeg#clientId=uc72f1c82-10d5-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=nXh0r&margin=%5Bobject%20Object%5D&name=5D60D4A8-F17F-4627-88BB-14526284BA09.jpeg&originHeight=1628&originWidth=2224&originalType=binary&ratio=1&rotation=0&showTitle=false&size=201640&status=done&style=none&taskId=ue56f6157-b3ba-4807-9be5-6a1ece607a9&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/22359585/1630466157712-3fa4774e-360c-4f75-8e71-1a0f0e98e656.png#clientId=u4cb20844-91c6-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=103&id=ube88a8e3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=205&originWidth=590&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13961&status=done&style=none&taskId=u40d28877-e66b-46d0-97a4-b6207a1e5a2&title=&width=295">
+<meta property="article:published_time" content="2021-12-01T01:42:38.000Z">
+<meta property="article:modified_time" content="2022-05-11T05:36:13.816Z">
+<meta property="article:author" content="Krisino">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/22359585/1631928283608-be1d4ec1-1391-4c43-a86e-843170a03869.png#clientId=ubdc7ea5a-8e4f-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=607&id=u92f51938&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1214&originWidth=2104&originalType=binary&ratio=1&rotation=0&showTitle=false&size=345132&status=done&style=none&taskId=u07bf00c5-c50a-47f0-bea1-8a081184dd4&title=&width=1052">
+  
+  
+  <title>开发环境部署 - Krisino</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Krisino</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://github.com/Krisino">
+                <i class="iconfont icon-github-fill"></i>
+                Github
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="开发环境部署">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-01 09:42" pubdate>
+        2021年12月1日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">开发环境部署</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1-配置-jdk"><a href="#1-配置-jdk" class="headerlink" title="1. 配置 jdk"></a>1. 配置 <code>jdk</code></h2><ol>
+<li>输入命令安装jdk</li>
+</ol>
+<p><code>yum -y list java*</code><br><code>yum -y install java-1.8.0-openjdk.x86_64</code><br>等待安装jdk<br>安装完成后，输入<code>java -version</code>若显示jdk版本，则说明安装成功。</p>
+<ol start="2">
+<li>安装javac</li>
+</ol>
+<p><code>yum -y install java-1.8.0-openjdk-devel</code><br>等待安装javac<br>安装完成后，输入<code>javac -version</code>若显示版本信息，则说明安装成功。	</p>
+<hr>
+<h2 id="2-配置-Go"><a href="#2-配置-Go" class="headerlink" title="2. 配置 Go"></a>2. 配置 <code>Go</code></h2><ol>
+<li>前往 <a target="_blank" rel="noopener" href="https://golang.google.cn/dl/">Go官网</a> 下载Linux版本的压缩包并传入服务器</li>
+<li>使用 <code>tar -zxvf xxx.tar.gz</code> 命令解压文件</li>
+<li>使用 <code>mv go /usr/local/</code> 将go文件夹放到&#x2F;usr&#x2F;local文件夹下</li>
+<li>配置PATH：</li>
+</ol>
+<p><code>vim /etc/profile</code><br>在文件结尾处加上以下代码：<br><code>export PATH=$PATH:/usr/local/go/bin</code><br>刷新profile文件：<br><code>source /etc/profile</code></p>
+<ol start="5">
+<li>输入 <code>go version</code> 若显示版本，则安装成功。</li>
+</ol>
+<hr>
+<h2 id="3-配置-g"><a href="#3-配置-g" class="headerlink" title="3. 配置 g++"></a>3. 配置 <code>g++</code></h2><ol>
+<li>输入 <code>g++ -v</code> 查看g++是否安装</li>
+<li>若未安装，输入 <code>yum install gcc-c++</code>  </li>
+<li>查看g++是否安装成功</li>
+</ol>
+<hr>
+<h2 id="4-配置-Tomcat"><a href="#4-配置-Tomcat" class="headerlink" title="4. 配置 Tomcat"></a>4. 配置 <code>Tomcat</code></h2><ol>
+<li>前往<a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Tomcat官网</a>，复制Tomcat压缩包下载链接（后缀为.tar.gz）</li>
+<li>输入命令 <code>wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.53/bin/apache-tomcat-9.0.53.tar.gz</code> （地址为你所复制的下载链接）</li>
+<li>下载完成后输入命令 <code>tar -zxvf apache-tomcat-9.0.53.tar.gz</code> （压缩包名为你下载的tomcat包名）</li>
+<li>将tomcat移动到&#x2F;usr&#x2F;local目录下 <code>mv apache-tomcat-9.0.53.tar.gz /usr/local</code> </li>
+<li>进入apache-tomcat-9.0.53&#x2F;bin目录，输入命令 <code>./startup.sh</code> 启动tomcat服务。</li>
+<li>浏览器地址栏输入主机地址:8080查看是否能访问Tomcat欢迎页（注意查看服务器安全组是否开启了8080端口）<br> <img src="https://cdn.nlark.com/yuque/0/2021/png/22359585/1631928283608-be1d4ec1-1391-4c43-a86e-843170a03869.png#clientId=ubdc7ea5a-8e4f-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=607&id=u92f51938&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1214&originWidth=2104&originalType=binary&ratio=1&rotation=0&showTitle=false&size=345132&status=done&style=none&taskId=u07bf00c5-c50a-47f0-bea1-8a081184dd4&title=&width=1052" srcset="/img/loading.gif" lazyload alt="image.png"><br> 若显示如上页面，则启动成功。</li>
+<li>修改tomcat&#x2F;bin的catalina.sh文件，添加如下内容 <code>CATALINA_PID=&quot;$CATALINA_BASE/tomcat.pid&quot;</code></li>
+<li>在&#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system下面建立tomcat.service文件，文件内容为：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Tomcat7<br><span class="hljs-attr">After</span>=syslog.target network.target remote-fs.target nss-lookup.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=forking<br><span class="hljs-attr">Environment</span>=<span class="hljs-string">&#x27;JAVA_HOME=/usr/local/jdk1.8.0_241&#x27;</span>　　<span class="hljs-comment">#jdk路径</span><br><span class="hljs-attr">PIDFile</span>=/usr/local/apache-tomcat-<span class="hljs-number">7.0</span>.<span class="hljs-number">103</span>/tomcat.pid　　<span class="hljs-comment">#tomcat路径</span><br><span class="hljs-attr">ExecStart</span>=/usr/local/apache-tomcat-<span class="hljs-number">7.0</span>.<span class="hljs-number">103</span>/bin/startup.sh　　<span class="hljs-comment">#tomcat路径</span><br><span class="hljs-attr">ExecReload</span>=/bin/kill-s HUP <span class="hljs-variable">$MAINPID</span><br><span class="hljs-attr">ExecStop</span>=/bin/kill-s QUIT <span class="hljs-variable">$MAINPID</span><br><span class="hljs-attr">PrivateTmp</span>=<span class="hljs-literal">true</span><br><br><span class="hljs-section">[Install]</span> <br><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>重新载入配置<br> <code>systemctl daemon-reload</code></li>
+<li>添加自启动<br> <code>systemctl enable tomcat.service</code><br> （可以使用disable关闭）</li>
+<li>查看是否自启动<br> <code>systemctl is-enabled tomcat.service</code></li>
+</ol>
+<hr>
+<h2 id="配置-Vim"><a href="#配置-Vim" class="headerlink" title="配置 Vim"></a>配置 <code>Vim</code></h2><ol>
+<li>显示行号<ol>
+<li>局部显示行号：<br> 在vim界面输入<code>:set nu</code><br> <img src="https://cdn.nlark.com/yuque/0/2021/jpeg/22359585/1631934214316-3be8d660-51f6-485e-a664-4df548f5c869.jpeg#clientId=uc72f1c82-10d5-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=dxY8z&margin=%5Bobject%20Object%5D&name=8A03C743-ACE6-4D68-9016-0BAABC3D7BDE.jpeg&originHeight=1530&originWidth=2224&originalType=binary&ratio=1&rotation=0&showTitle=false&size=180706&status=done&style=none&taskId=ue56a514d-4d9f-4706-94de-1f0a4fb731e&title=" srcset="/img/loading.gif" lazyload alt="8A03C743-ACE6-4D68-9016-0BAABC3D7BDE.jpeg"><br> 输入此命令后即可显示行号：<br> <img src="https://cdn.nlark.com/yuque/0/2021/jpeg/22359585/1631934258507-d89c3a29-3a74-4f01-9c1d-a73842c0e308.jpeg#clientId=uc72f1c82-10d5-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=nXh0r&margin=%5Bobject%20Object%5D&name=5D60D4A8-F17F-4627-88BB-14526284BA09.jpeg&originHeight=1628&originWidth=2224&originalType=binary&ratio=1&rotation=0&showTitle=false&size=201640&status=done&style=none&taskId=ue56f6157-b3ba-4807-9be5-6a1ece607a9&title=" srcset="/img/loading.gif" lazyload alt="5D60D4A8-F17F-4627-88BB-14526284BA09.jpeg"></li>
+<li>全局显示行号：<br> 进入全局配置<code>vim /etc/vimrc</code><br> 在文件末尾加上 <code>set nu</code> 即可。</li>
+</ol>
+</li>
+<li>导入配置好的vimrc文件<br> 我用阿里云盘分享了「vimrc」，你可以不限速下载🚀</li>
+</ol>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/RcLMyk8EaeW">https://www.aliyundrive.com/s/RcLMyk8EaeW</a><br>下载好之后上传到&#x2F;etc 文件夹内，覆盖原有的vimrc文件即可。</p>
+<blockquote>
+<p>vim配置功能如下：</p>
+<ul>
+<li>按F5可以直接编译并执行C、C++、java代码以及执行shell脚本，按“F8”可进行C、C++代码的调试</li>
+<li>自动插入文件头 ，新建C、C++源文件时自动插入表头：包括文件名、作者、联系方式、建立时间等，读者可根据需求自行更改</li>
+<li>映射“Ctrl + A”为全选并复制快捷键，方便复制代码</li>
+<li>按“F2”可以直接消除代码中的空行</li>
+<li>“F3”可列出当前目录文件，打开树状文件目录</li>
+<li>支持鼠标选择、方向键移动</li>
+<li>代码高亮，自动缩进，显示行号，显示状态行</li>
+<li>按“Ctrl + P”可自动补全</li>
+<li>[]、{}、()、””、’ ‘等都自动补全</li>
+<li>其他功能可以研究配置文件</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="Code-Server"><a href="#Code-Server" class="headerlink" title="Code-Server"></a>Code-Server</h2><h3 id="搭建Code-Server"><a href="#搭建Code-Server" class="headerlink" title="搭建Code-Server"></a>搭建Code-Server</h3><ol>
+<li>前往<a target="_blank" rel="noopener" href="https://github.com/cdr/code-server/releases">Code-Server官网release仓库</a>下载Linux-amd64版本。<ul>
+<li>Windows系统下载压缩包，然后使用FTP发送到服务器上</li>
+<li>服务器使用 <code>wget www.xxx.com</code> 直接下载压缩包</li>
+</ul>
+</li>
+<li>使用 <code>tar xf code-server.tar.gz</code> 解压缩</li>
+<li>使用 <code>vim ~/.config/code-server/config.yaml</code> 修改配置文件</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/22359585/1630466157712-3fa4774e-360c-4f75-8e71-1a0f0e98e656.png#clientId=u4cb20844-91c6-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=103&id=ube88a8e3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=205&originWidth=590&originalType=binary&ratio=1&rotation=0&showTitle=false&size=13961&status=done&style=none&taskId=u40d28877-e66b-46d0-97a4-b6207a1e5a2&title=&width=295" srcset="/img/loading.gif" lazyload alt="image.png"><br>0.0.0.0表示任何人都能访问，后面xxxx表示端口号（需要去控制台安全组开启端口）<br>password字段填写登录VsCode的密码</p>
+<ol start="4">
+<li>在code-server目录下输入指令 <code>./code-server</code> 开启code-server</li>
+<li>在网址输入主机:端口号即可访问</li>
+</ol>
+<h3 id="配置Code-Server"><a href="#配置Code-Server" class="headerlink" title="配置Code-Server"></a>配置Code-Server</h3><h4 id="必备插件"><a href="#必备插件" class="headerlink" title="必备插件"></a>必备插件</h4><p>Code Runner<br>Run in Terminal</p>
+<h4 id="C-x2F-C"><a href="#C-x2F-C" class="headerlink" title="C&#x2F;C++"></a>C&#x2F;C++</h4><p>Linux使用 <code>which</code> 查看是否安装了gcc、g++、gdb<br>安装gcc <code>yum install gcc</code><br>安装g++ <code>yum install gcc-c++</code><br>安装gdb <code>yum install gdb</code><br>前往 <a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-cpptools/releases">Cpptools插件release仓库</a> 下载插件（注意插件版本与vscode版本兼容性）<br>在vscode里安装VSIX文件</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BC%80%E5%8F%91/">开发</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
