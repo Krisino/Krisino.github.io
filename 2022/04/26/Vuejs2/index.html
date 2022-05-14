@@ -16,23 +16,21 @@
   <meta name="author" content="Alleys">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、安装 Oracle JDK 获取 JDK 安装包   前往 Oracle JDK 官网 获取 JDK 下载链接 url，运行命令 wget url  手动在Oracle JDK官网下载，并上传到服务器    解压 JDK  运行命令 tar -zxvf jdk-8u300-linux-x64.tar.gz 进行解压（注意文件名替换为自己下载的文件名）  移动 JDK 文件夹  运行命令 cd">
+    <meta name="description" content="Vue.js 2.x 使用指南 Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。  Vue.js官网 &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux环境部署指南">
-<meta property="og:url" content="http://example.com/2021/12/01/Linux_environment_guide/index.html">
+<meta property="og:title" content="Vue.js 2.x 使用指南">
+<meta property="og:url" content="http://example.com/2022/04/26/Vuejs2/index.html">
 <meta property="og:site_name" content="Alleys">
-<meta property="og:description" content="一、安装 Oracle JDK 获取 JDK 安装包   前往 Oracle JDK 官网 获取 JDK 下载链接 url，运行命令 wget url  手动在Oracle JDK官网下载，并上传到服务器    解压 JDK  运行命令 tar -zxvf jdk-8u300-linux-x64.tar.gz 进行解压（注意文件名替换为自己下载的文件名）  移动 JDK 文件夹  运行命令 cd">
+<meta property="og:description" content="Vue.js 2.x 使用指南 Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。  Vue.js官网 &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alleys.oss-cn-hangzhou.aliyuncs.com/img/markdown/Tomcat_web.png">
-<meta property="article:published_time" content="2021-12-01T00:42:43.000Z">
-<meta property="article:modified_time" content="2022-05-12T11:40:02.326Z">
+<meta property="article:published_time" content="2022-04-26T10:45:08.000Z">
+<meta property="article:modified_time" content="2022-05-14T15:05:09.104Z">
 <meta property="article:author" content="Alleys">
-<meta property="article:tag" content="编程基础">
+<meta property="article:tag" content="前端开发">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alleys.oss-cn-hangzhou.aliyuncs.com/img/markdown/Tomcat_web.png">
   
   
-  <title>Linux环境部署指南 - Alleys</title>
+  <title>Vue.js 2.x 使用指南 - Alleys</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -194,7 +192,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Linux环境部署指南">
+            <span class="h2" id="subtitle" title="Vue.js 2.x 使用指南">
               
             </span>
 
@@ -204,8 +202,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-01 08:42" pubdate>
-        2021年12月1日 早上
+      <time datetime="2022-04-26 18:45" pubdate>
+        2022年4月26日 晚上
       </time>
     </span>
   
@@ -215,7 +213,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.8k 字
+      720 字
     </span>
   
 
@@ -224,7 +222,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      7 分钟
     </span>
   
 
@@ -253,117 +251,45 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux环境部署指南</h1>
+            <h1 style="display: none">Vue.js 2.x 使用指南</h1>
             
             <div class="markdown-body">
-              <h2 id="一、安装-Oracle-JDK"><a href="#一、安装-Oracle-JDK" class="headerlink" title="一、安装 Oracle JDK"></a>一、安装 <code>Oracle JDK</code></h2><ol>
-<li>获取 JDK 安装包</li>
-</ol>
-<ul>
-<li><p>前往 <a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">Oracle JDK 官网</a> 获取 JDK 下载链接 <code>url</code>，运行命令 <code>wget url</code></p>
-</li>
-<li><p>手动在Oracle JDK官网下载，并上传到服务器</p>
-</li>
-</ul>
-<ol start="2">
-<li>解压 JDK</li>
-</ol>
-<p>运行命令 <code>tar -zxvf jdk-8u300-linux-x64.tar.gz</code> 进行解压（注意文件名替换为自己下载的文件名）</p>
-<ol start="3">
-<li>移动 JDK 文件夹</li>
-</ol>
-<p>运行命令 <code>cd /usr/local</code> <code>mkdir java</code> <code>mv jdk-8u300-linux-x64 /usr/local/java</code> （第三条命令需先回到 JDK 解压目录）</p>
-<ol start="4">
-<li>配置环境变量</li>
-</ol>
-<p>编辑 <code>/etc/profile</code> 文件，在文件末尾加上如下代码（使用自己下载的 JDK 版本）：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">JAVA_HOME</span>=/usr/local/java/jdk1.8.0_300<br><span class="hljs-attribute">CLASSPATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/lib/<br><span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$PATH</span>:$JAVA_HOME/bin<br><span class="hljs-built_in">export</span> PATH JAVA_HOME CLASSPATH<br></code></pre></td></tr></table></figure>
+              <h1 id="Vue-js-2-x-使用指南"><a href="#Vue-js-2-x-使用指南" class="headerlink" title="Vue.js 2.x 使用指南"></a>Vue.js 2.x 使用指南</h1><blockquote>
+<p><strong>Vue</strong> (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">Vue.js官网</a> &#x2F; <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">Vue.js 2.x 官方文档</a></p>
+<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>使用 Vue 首先创建一个 <code>html</code> 文件，然后将 Vue 引入到其中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/vue@2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>更新 <code>profile</code> 配置文件</li>
-</ol>
-<p>运行命令 <code>source /etc/profile</code></p>
-<ol start="6">
-<li>查看 JDK 是否安装成功</li>
-</ol>
-<p>输入命令 <code>java -version</code> <code>javac -version</code></p>
-<hr>
-<h2 id="二、安装-Go"><a href="#二、安装-Go" class="headerlink" title="二、安装 Go"></a>二、安装 <code>Go</code></h2><ol>
-<li>获取 Go 安装包</li>
-</ol>
-<ul>
-<li>前往 <a target="_blank" rel="noopener" href="https://golang.google.cn/dl/">Go官网</a> 获取下载链接 <code>url</code>，运行命令 <code>wget url</code></li>
-<li>手动在 Go 官网下载，并上传到服务器</li>
-</ul>
-<ol start="2">
-<li>解压 Go</li>
-</ol>
-<p>运行命令 <code>tar -zxvf xxx.tar.gz</code> 解压文件</p>
-<ol start="3">
-<li>移动 Go 文件夹</li>
-</ol>
-<p>使用 <code>mv go /usr/local/</code> 将 go 文件夹放到 <code>/usr/local</code> 文件夹下</p>
-<ol start="4">
-<li>配置PATH：</li>
-</ol>
-<p>运行命令 <code>vim /etc/profile</code> 在文件结尾处加上以下代码：<code>export PATH=$PATH:/usr/local/go/bin</code></p>
-<ol start="5">
-<li>更新 <code>profile</code> 配置文件</li>
-</ol>
-<p>运行命令 <code>source /etc/profile</code></p>
-<ol start="5">
-<li>查看 Go 是否安装成功</li>
-</ol>
-<p>运行命令 <code>go version</code></p>
-<hr>
-<h2 id="三、安装-Tomcat"><a href="#三、安装-Tomcat" class="headerlink" title="三、安装 Tomcat"></a>三、安装 <code>Tomcat</code></h2><ol>
-<li>获取 Tomcat 压缩包</li>
-</ol>
-<ul>
-<li>前往 <a target="_blank" rel="noopener" href="http://tomcat.apache.org/">Tomcat官网</a> 获取下载链接 <code>url</code>，运行命令 <code>wget url</code></li>
-<li>手动在 Tomcat 官网下载，并上传到服务器</li>
-</ul>
-<ol start="2">
-<li>解压压缩包</li>
-</ol>
-<p>下载完成后输入命令 <code>tar -zxvf apache-tomcat-9.0.53.tar.gz</code></p>
-<ol start="3">
-<li>移动 Tomcat 文件夹</li>
-</ol>
-<p>运行命令 <code>mv apache-tomcat-9.0.53.tar.gz /usr/local</code> 将 tomcat 移动到&#x2F;usr&#x2F;local目录下</p>
-<ol start="4">
-<li><p>进入 <code>usr/local/apache-tomcat-9.0.53/bin</code> 目录，输入命令 <code>./startup.sh</code> 启动tomcat服务。</p>
-</li>
-<li><p>运行 Tomcat</p>
-</li>
-</ol>
-<p>浏览器地址栏输入 <code>主机地址:8080</code> 查看是否能访问 Tomcat 欢迎页（如果是服务器注意查看安全组是否开启了 <code>8080</code> 端口）</p>
-<p><img src="https://alleys.oss-cn-hangzhou.aliyuncs.com/img/markdown/Tomcat_web.png" srcset="/img/loading.gif" lazyload alt="Tomcat"></p>
-<ol start="6">
-<li>设置 Tomcat 开机自启</li>
-</ol>
-<p>修改 <code>tomcat/bin/catalina.sh</code> 文件，添加如下内容 <code>CATALINA_PID=&quot;$CATALINA_BASE/tomcat.pid&quot;</code></p>
-<p>在 <code>/usr/lib/systemd/system</code> 下面建立 <code>tomcat.service</code> 文件，文件内容为：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Tomcat7<br><span class="hljs-attr">After</span>=syslog.target network.target remote-fs.target nss-lookup.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=forking<br><span class="hljs-attr">Environment</span>=<span class="hljs-string">&#x27;JAVA_HOME=/usr/local/jdk1.8.0_300&#x27;</span>　　<span class="hljs-comment"># jdk 路径</span><br><span class="hljs-attr">PIDFile</span>=/usr/local/apache-tomcat-<span class="hljs-number">7.0</span>.<span class="hljs-number">103</span>/tomcat.pid　　<span class="hljs-comment"># tomcat 路径</span><br><span class="hljs-attr">ExecStart</span>=/usr/local/apache-tomcat-<span class="hljs-number">7.0</span>.<span class="hljs-number">103</span>/bin/startup.sh　　<span class="hljs-comment"># tomcat 路径</span><br><span class="hljs-attr">ExecReload</span>=/bin/kill-s HUP <span class="hljs-variable">$MAINPID</span><br><span class="hljs-attr">ExecStop</span>=/bin/kill-s QUIT <span class="hljs-variable">$MAINPID</span><br><span class="hljs-attr">PrivateTmp</span>=<span class="hljs-literal">true</span><br><br><span class="hljs-section">[Install]</span> <br><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
+<p>然后在 <code>html</code> 文件中使用以下模板来将数据渲染进DOM</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>  &#123;&#123; message &#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>重新载入配置 <code>systemctl daemon-reload</code></p>
-<p>添加自启动 <code>systemctl enable tomcat.service</code> （关闭使用 disable 命令）</p>
-<ol start="7">
-<li>查看是否自启动</li>
-</ol>
-<p>运行命令 <code>systemctl is-enabled tomcat.service</code></p>
-<hr>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello Vue!&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ExQNLap" data-user="Crushro" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/Crushro/pen/ExQNLap">
+  Untitled</a> by Crushro (<a target="_blank" rel="noopener" href="https://codepen.io/Crushro">@Crushro</a>)
+  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6/">应用框架</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6/Vue-js/">Vue.js</a>
+                    
+                  </div>
+                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a>
                     
                   </div>
                 
@@ -380,18 +306,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/13/Flutter_develop_guide/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Flutter应用开发指南</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/02/Selection_sort/">
-                        <span class="hidden-mobile">选择排序</span>
+                      <a href="/2021/12/13/Flutter_develop_guide/">
+                        <span class="hidden-mobile">Flutter应用开发指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
