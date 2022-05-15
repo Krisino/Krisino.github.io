@@ -16,15 +16,15 @@
   <meta name="author" content="Alleys">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Vue.js 2.x 使用指南 Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。  Vue.js官网 &amp;">
+    <meta name="description" content="Vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue.js 2.x 使用指南">
 <meta property="og:url" content="http://example.com/2022/04/26/Vuejs2/index.html">
 <meta property="og:site_name" content="Alleys">
-<meta property="og:description" content="Vue.js 2.x 使用指南 Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。  Vue.js官网 &amp;">
+<meta property="og:description" content="Vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-26T10:45:08.000Z">
-<meta property="article:modified_time" content="2022-05-15T05:31:12.336Z">
+<meta property="article:modified_time" content="2022-05-15T09:12:28.356Z">
 <meta property="article:author" content="Alleys">
 <meta property="article:tag" content="前端开发">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17 分钟
+      16 分钟
     </span>
   
 
@@ -255,7 +255,7 @@
             
             <div class="markdown-body">
               <h1 id="Vue-js-2-x-使用指南"><a href="#Vue-js-2-x-使用指南" class="headerlink" title="Vue.js 2.x 使用指南"></a>Vue.js 2.x 使用指南</h1><blockquote>
-<p><strong>Vue</strong> (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Vue</strong>是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">Vue.js官网</a> &#x2F; <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">Vue.js 2.x 官方文档</a></p>
 <h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>使用 Vue 首先创建一个 <code>html</code> 文件，然后将 Vue 引入到其中</p>
@@ -266,12 +266,11 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app1&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello Vue!&#x27;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="dydOwqP" data-preview="true" data-user="Alleys" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/Alleys/pen/dydOwqP">
-  插值表达式</a> by Alleys (<a target="_blank" rel="noopener" href="https://codepen.io/Alleys">@Alleys</a>)
-  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Vue2.x 第一个程序" src="https://codepen.io/Alleys/embed/preview/dydOwqP?default-tab=html%2Cresult&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/Alleys/pen/dydOwqP">
+  Vue2.x 第一个程序</a> by Alleys (<a target="_blank" rel="noopener" href="https://codepen.io/Alleys">@Alleys</a>)
+  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.
+</iframe>
 
 <h2 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h2><p>创建 Vue 实例的方式如下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-comment">//...</span><br>&#125;)<br></code></pre></td></tr></table></figure>
@@ -295,12 +294,11 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app4 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app4&#x27;</span>,<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">isButtonDisabled</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">src</span>: <span class="hljs-string">&quot;#&quot;</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<p class="codepen" data-height="300" data-theme-id="light" data-default-tab="html,result" data-slug-hash="ExQNLap" data-preview="true" data-user="Alleys" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/Alleys/pen/ExQNLap">
-  Vue2_FirstProgram</a> by Alleys (<a target="_blank" rel="noopener" href="https://codepen.io/Alleys">@Alleys</a>)
-  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Vue2.x 语法" src="https://codepen.io/Alleys/embed/preview/ExQNLap?default-tab=html%2Cresult&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/Alleys/pen/ExQNLap">
+  Vue2.x 语法</a> by Alleys (<a target="_blank" rel="noopener" href="https://codepen.io/Alleys">@Alleys</a>)
+  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.
+</iframe>
             </div>
             <hr>
             <div>
