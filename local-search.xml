@@ -31,6 +31,33 @@
   
   
   <entry>
+    <title>翻转链表</title>
+    <link href="/2022/02/25/LinkedList_reverse/"/>
+    <url>/2022/02/25/LinkedList_reverse/</url>
+    
+    <content type="html"><![CDATA[<h1 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h1><p>给定一个单链表，实现将其翻转</p><p>例如：</p><p>输入：1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</p><p>输出：5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>翻转一个单链表，最好是不使用额外链表空间，那么可以选择改变链表中指针的朝向。</p><p>可以使用两个指针 <code>pre</code> 和 <code>cur</code>, <code>pre</code> 指向 NULL, <code>cur</code> 指向头节点。</p><p>接下来要做的就是将 <code>cur</code> 的指针指向 <code>pre</code>, 同时将 <code>pre</code> 和 <code>cur</code> 后移一个节点。</p><p>但是问题就出现了，当 <code>cur</code> 的 <code>next</code> 指针指向 <code>pre</code> 时，<code>cur</code> 原本的 <code>next</code> 就断开了，当 <code>cur</code> 后移时就找不到正确的下一个节点。</p><p>因此可以选择使用一个 <code>temp</code> 指针指向 <code>cur</code> 的下一个节点。</p><p>每次将 <code>cur</code> 指向 <code>pre</code>, 程序一直到 <code>cur</code> 为 <code>NULL</code> 时，所有的连接都翻转过来，此时的链表即为翻转后的链表。同时 <code>pre</code> 为翻转后链表的头节点。</p><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 迭代实现</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode* head)</span> </span>&#123;<br>    ListNode* temp;<br>    ListNode* cur = head;<br>    ListNode* pre = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">while</span>(cur != <span class="hljs-literal">NULL</span>) &#123;<br>            <span class="hljs-comment">// 保存 cur 的下一个节点</span><br>            temp = cur-&gt;next;<br>            <span class="hljs-comment">// 翻转连接</span><br>            cur-&gt;next = pre;<br>            <span class="hljs-comment">// pre 和 cur 向后移动</span><br>            pre = cur;<br>            cur = temp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> pre;<br>&#125;<br><br><span class="hljs-comment">// 递归实现</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode* pre, ListNode* cur)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span>(cur == <span class="hljs-literal">NULL</span>) &#123;<br>        <span class="hljs-keyword">return</span> pre;<br>    &#125;<br>    ListNode* temp = cur-&gt;next;<br>    cur-&gt;next = pre;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">reverseList</span>(cur, temp);<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+      <category>链表</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>链表</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Flutter应用开发指南</title>
     <link href="/2021/12/13/Flutter_develop_guide/"/>
     <url>/2021/12/13/Flutter_develop_guide/</url>
